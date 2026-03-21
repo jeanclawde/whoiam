@@ -10,6 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -42,7 +43,8 @@
       --dim: #525252;
       --card: #ffffff;
     }
-    .dark-mode, .dark{
+    /* Keep backwards-compatible .dark-mode class and support Tailwind-style html.dark by targeting :root.dark */
+    .dark-mode, :root.dark{
       --bg: #0b1220;
       --text: #e6eef8;
       --dim: #94a3b8;
@@ -64,6 +66,7 @@
 
     /* Card styling */
     .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    /* Keep legacy .dark-mode rule, and also support html.dark via :root.dark above */
     .dark-mode .card{border:1px solid rgba(255,255,255,0.04)}
 
     /* Terminal-style button */
