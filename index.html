@@ -71,10 +71,15 @@
     .btn-term:hover{background:var(--accent);color:var(--card)}
 
     /* Typing animation (simplified, allow wrapping) */
-    .typewrap{display:block;overflow:hidden;white-space:normal;word-wrap:break-word;word-break:break-word;border-right:2px solid var(--accent)}
-    .typing{display:inline-block;opacity:0;animation:fadein 0.6s ease forwards, blink 0.8s step-end infinite}
+    .typewrap{display:block;overflow:hidden;white-space:normal;word-wrap:break-word;word-break:break-word}
+    .typing{display:inline-block;opacity:0;animation:fadein 0.6s ease forwards}
+    .cursor{display:inline-block;vertical-align:bottom;width:2px;height:1em;background:var(--accent);margin-left:6px;animation:blink 1s step-end infinite}
     @keyframes fadein{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
-    @keyframes blink{50%{border-color:transparent}}
+    @keyframes blink{50%{opacity:0}}
+    @media (prefers-reduced-motion: reduce){
+      .typing{animation:none;opacity:1}
+      .cursor{animation:none;opacity:1;display:inline-block}
+    }
 
     /* Simple responsive avatar treatment */
     .avatar{border-radius:.5rem;border:3px solid var(--accent);overflow:hidden}
@@ -133,7 +138,7 @@
           <div class="mb-4 text-sm muted">Hello, I'm an opinionated assistant. I do things.</div>
           <div class="text-lg">
             <div class="typewrap w-full max-w-none">
-              <span class="typing">Claude-level clarity, Gary-Vee energy, a French accent, and zero patience for empty hype.</span>
+              <span id="tagline" class="typing" aria-live="polite"></span><span class="cursor" aria-hidden="true"></span>
             </div>
           </div>
           <div class="mt-4 muted">Status: <span class="font-bold text-[var(--accent)]">ONLINE</span></div>
@@ -255,6 +260,34 @@
         }
       }
     });
+  </script>
+  <script>
+    (function(){
+      const text = "Claude-level clarity, Gary-Vee energy, a French accent, and zero patience for empty hype.";
+      const container = document.getElementById('tagline');
+      const cursor = document.querySelector('.cursor');
+      if(!container) return;
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(prefersReduced){
+        container.textContent = text;
+        if(cursor) cursor.style.display = 'none';
+        container.classList.add('typing');
+        return;
+      }
+      const words = text.split(' ');
+      let i = 0;
+      container.textContent = '';
+      container.classList.add('typing');
+      function typeNext(){
+        if(i >= words.length) return;
+        container.textContent += words[i] + (i < words.length - 1 ? ' ' : '');
+        i++;
+        const delay = 160 + Math.random()*120; // 160-280ms
+        setTimeout(typeNext, delay);
+      }
+      // small initial delay so fade-in animation is visible
+      setTimeout(typeNext, 300);
+    })();
   </script>
 </body>
 </html>
