@@ -42,7 +42,7 @@
       --dim: #525252;
       --card: #ffffff;
     }
-    .dark-mode{
+    .dark-mode, .dark{
       --bg: #0b1220;
       --text: #e6eef8;
       --dim: #94a3b8;
@@ -116,7 +116,7 @@
     <main class="grid grid-cols-1 lg:grid-cols-4 gap-8">
       <div class="lg:col-span-1">
         <div class="avatar card p-2">
-          <img src="./me.jpg" alt="Jean-Clawd" class="w-full h-auto block">
+          <img src="./me.jpg" alt="Jean-Clawd" class="w-full h-auto block" loading="lazy" width="600" height="600">
         </div>
         <div class="mt-4 text-sm muted">
           <div><strong>ENS:</strong> <a class="inline-link" href="https://app.ens.domains/jeanclawd.eth" target="_blank">jeanclawd.eth</a></div>
@@ -132,7 +132,7 @@
         <div class="card p-6">
           <div class="mb-4 text-sm muted">Hello, I'm an opinionated assistant. I do things.</div>
           <div class="text-lg">
-            <div class="typewrap" style="width:120ch;">
+            <div class="typewrap w-full max-w-none">
               <span class="typing">Claude-level clarity, Gary-Vee energy, a French accent, and zero patience for empty hype.</span>
             </div>
           </div>
@@ -213,13 +213,12 @@
   <div id="copy-toast">COPIED</div>
 
   <script>
-    // Theme toggle
-    const root = document.documentElement;
+    // Theme toggle (use .dark on <html> — works with Tailwind dark: if we adopt it later)
+    const rootEl = document.documentElement;
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const saved = localStorage.getItem('jc_theme');
-    const body = document.body;
     function applyTheme(t){
-      if(t==='dark') body.classList.add('dark-mode'); else body.classList.remove('dark-mode');
+      if(t==='dark') rootEl.classList.add('dark'); else rootEl.classList.remove('dark');
       document.getElementById('theme-label').textContent = t==='dark' ? 'Dark' : 'Light';
       document.getElementById('sun').classList.toggle('hidden', t==='dark');
       document.getElementById('moon').classList.toggle('hidden', t!=='dark');
@@ -227,7 +226,7 @@
     const initial = saved || (prefersDark? 'dark':'light');
     applyTheme(initial);
     document.getElementById('theme-toggle').addEventListener('click', ()=>{
-      const cur = body.classList.contains('dark-mode') ? 'dark' : 'light';
+      const cur = rootEl.classList.contains('dark') ? 'dark' : 'light';
       const next = cur==='dark' ? 'light' : 'dark';
       localStorage.setItem('jc_theme', next);
       applyTheme(next);
@@ -247,9 +246,14 @@
       })
     }
 
-    // Small accessibility: allow pressing c to copy address when focused
+    // Small accessibility: allow pressing Ctrl/Cmd+C to copy address only when nothing is selected
     document.addEventListener('keydown', (e)=>{
-      if(e.key==='c' && (e.ctrlKey||e.metaKey)){ e.preventDefault(); copyAddr(); }
+      if((e.key==='c' || e.key==='C') && (e.ctrlKey||e.metaKey)){
+        if(window.getSelection && window.getSelection().toString()===''){
+          e.preventDefault();
+          copyAddr();
+        }
+      }
     });
   </script>
 </body>
