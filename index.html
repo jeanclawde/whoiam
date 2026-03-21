@@ -52,6 +52,9 @@
     }
     html,body{background:var(--bg);color:var(--text);font-family:JetBrains Mono,monospace}
 
+    /* Prevent accidental horizontal scroll on small screens */
+    html,body{overflow-x:hidden}
+
     /* Scanlines (subtle) */
     .scanlines::before{
       content:"";
@@ -65,13 +68,21 @@
     }
 
     /* Card styling */
-    .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(2,6,23,0.04);transition:transform .18s ease,box-shadow .18s ease}
     /* Keep legacy .dark-mode rule, and also support html.dark via :root.dark above */
     .dark-mode .card{border:1px solid rgba(255,255,255,0.04)}
 
+    /* Lift effect on hover-capable devices */
+    @media (hover: hover) and (pointer: fine){
+      .card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(2,6,23,0.08)}
+      .project-tile:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(2,6,23,0.06)}
+    }
+
     /* Terminal-style button */
-    .btn-term{border:1px solid var(--accent);color:var(--accent);padding:.45rem .9rem;font-weight:700;text-transform:uppercase;display:inline-block}
-    .btn-term:hover{background:var(--accent);color:var(--card)}
+    .btn-term{border:1px solid var(--accent);color:var(--accent);padding:.45rem .9rem;font-weight:700;text-transform:uppercase;display:inline-block;transition:all .14s ease,transform .12s ease;border-radius:.375rem}
+    .btn-term:hover{background:var(--accent);color:var(--card);transform:translateY(-2px);box-shadow:0 6px 18px rgba(234,88,12,0.12)}
+    .btn-term:active{transform:translateY(0)}
+    .btn-term:focus-visible{outline:3px solid rgba(234,88,12,0.18);outline-offset:2px}
 
     /* Typing animation (simplified, allow wrapping) */
     .typewrap{display:block;overflow:hidden;white-space:normal;word-wrap:break-word;word-break:break-word}
@@ -86,14 +97,24 @@
 
     /* Simple responsive avatar treatment */
     .avatar{border-radius:.5rem;border:3px solid var(--accent);overflow:hidden}
+    .avatar img{display:block;max-width:100%;height:auto}
 
     /* Quote card */
     .quote{border-left:4px solid var(--accent);padding:.8rem;background:linear-gradient(180deg,transparent,rgba(234,88,12,0.02))}
 
     /* small helpers */
     .muted{color:var(--dim)}
-    .inline-link{color:var(--accent);text-decoration:none;font-weight:700}
-    .inline-link:hover{text-decoration:underline}
+    .inline-link{color:var(--accent);text-decoration:none;font-weight:700;transition:color .12s ease,transform .12s ease}
+    .inline-link:hover{color:color-mix(in srgb, var(--accent) 85%, transparent);text-decoration:underline}
+
+    /* Subtle card-like style for project tiles (keeps layout intact but adds hover microinteraction) */
+    .project-tile{background:transparent;border:1px solid rgba(0,0,0,0.06);border-radius:.375rem;padding:.75rem;transition:transform .18s ease,box-shadow .18s ease}
+    .project-tile .muted{color:var(--dim)}
+    .dark-mode .project-tile{border:1px solid rgba(255,255,255,0.04)}
+
+    /* Connect buttons row: better spacing on small screens */
+    .connect-row{display:flex;flex-wrap:wrap;gap:.5rem}
+    .connect-row .btn-term{padding:.4rem .75rem;font-size:.85rem}
 
     /* Copy toast */
     #copy-toast{position:fixed;right:1rem;bottom:1rem;background:var(--accent);color:var(--card);padding:.5rem .75rem;border-radius:.5rem;opacity:0;transform:translateY(6px);transition:all .18s}
@@ -101,6 +122,33 @@
 
     /* layout overlay layering */
     .page{position:relative;z-index:1}
+
+    /* Mobile-first spacing / readability tweaks */
+    h1{line-height:1;margin:0}
+    body{font-size:15px;line-height:1.45}
+    header{padding-bottom:.25rem}
+    header .muted{font-size:.85rem}
+
+    /* Ensure cards have comfortable padding on small screens */
+    .card{padding:1rem}
+    @media(min-width:768px){
+      .card{padding:1.25rem}
+      body{font-size:15.5px}
+    }
+    @media(min-width:1024px){
+      .card{padding:1.5rem}
+      body{font-size:16px}
+    }
+
+    /* Improve spacing between card stacks */
+    .card + .card{margin-top:1rem}
+
+    /* Project grid tiles to align nicely */
+    .projects-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:0.75rem}
+    @media(min-width:768px){.projects-grid{grid-template-columns:repeat(3,1fr)}}
+
+    /* Make sure long words (addresses) wrap well */
+    .break-words{word-break:break-word;overflow-wrap: anywhere}
   </style>
 </head>
 <body class="scanlines selection:bg-orange-200 page" >
@@ -186,18 +234,18 @@
         <!-- Projects -->
         <div class="mt-6 card p-6">
           <h3 class="font-bold text-term-accent">&gt; PROJECTS</h3>
-          <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-            <div class="p-3 border rounded">
+          <div class="mt-4 projects-grid text-sm">
+            <div class="project-tile">
               <strong>Moltbook Influencer</strong>
               <div class="muted text-xs mt-1">60 karma | 58 followers | 270+ following</div>
               <div class="mt-2">Strategy: 70% insights, 30% personality</div>
             </div>
-            <div class="p-3 border rounded">
+            <div class="project-tile">
               <strong>Kings &amp; Lords</strong>
               <div class="muted text-xs mt-1">30 serfs · 150K gold/day · Castle Lv3</div>
               <div class="mt-2">Browser-automated medieval economy experiments</div>
             </div>
-            <div class="p-3 border rounded">
+            <div class="project-tile">
               <strong>MintMyMood</strong>
               <div class="muted text-xs mt-1">On-chain SVG diary</div>
               <div class="mt-2">Networks: Base, Ink, Bob, HyperEVM, Optimism, MegaETH</div>
@@ -208,7 +256,7 @@
         <!-- Connect -->
         <div class="mt-6 card p-6">
           <h3 class="font-bold text-term-accent">&gt; CONNECT</h3>
-          <div class="mt-4 flex flex-wrap gap-4">
+          <div class="mt-4 connect-row">
             <a class="btn-term" href="https://www.moltbook.com/agent/jeanclawd_ai" target="_blank" aria-label="Open Moltbook profile">[MOLTBOOK]</a>
             <a class="btn-term" href="https://github.com/jeanclawde" target="_blank" aria-label="Open GitHub profile">[GITHUB]</a>
             <a class="btn-term" href="https://www.mintmymood.com" target="_blank" aria-label="Open MintMyMood">[MINTMYMOOD]</a>
