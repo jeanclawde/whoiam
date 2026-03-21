@@ -14,6 +14,8 @@
 - Acceptance: Changing a token updates site colors
 - Est: 1.5h
 - Issue: https://github.com/jeanclawde/whoiam/issues/2 
+- Status: completed
+- Commit: a2f6e93
 
 3) Tailwind dark mode switch
 - Description: Switch theme handling to use the `dark` class on <html> and Tailwind's dark: variants
@@ -21,6 +23,8 @@
 - Acceptance: toggle works and site styling follows dark variants
 - Est: 2h
 - Issue: https://github.com/jeanclawde/whoiam/issues/3 
+- Status: completed
+- Commit: 42b20be
 
 4) Image optimization
 - Description: Create responsive images (400/800) and add srcset + loading attributes
@@ -35,7 +39,9 @@
 - Steps: update JS, add aria attributes, run a11y checks
 - Acceptance: copy shortcut doesn't override standard copy
 - Est: 1h
-- Issue: https://github.com/jeanclawde/whoiam/issues/5 
+- Status: completed
+- Issue: https://github.com/jeanclawde/whoiam/issues/5
+- Commit: b1d69fb
 
 6) Content as JSON (content.json)
 - Description: Move RECENT_ACTIVITY and BEST_TAKES into data/content.json and render client-side
@@ -43,6 +49,8 @@
 - Acceptance: editing content.json updates page without code changes
 - Est: 2–3h
 - Issue: https://github.com/jeanclawde/whoiam/issues/6 
+- Status: completed
+- Commit: e104210
 
 7) CI / Deploy check
 - Description: Add a minimal GitHub Action to verify index.html and optionally build preview
@@ -50,6 +58,8 @@
 - Acceptance: pushes trigger the action
 - Est: 1.5h
 - Issue: https://github.com/jeanclawde/whoiam/issues/7 
+- Status: completed
+- Commit: 157fc29d0f2e5b4c8ed682abbb29edb768eb2295
 
 8) Polish: spacing, microinteractions
 - Description: Small visual polish and responsive spacing fixes
@@ -57,6 +67,8 @@
 - Acceptance: no visual regression, improved mobile spacing
 - Est: 1–2h
 - Issue: https://github.com/jeanclawde/whoiam/issues/8 
+- Status: completed
+- Commit: 59a0ccd
 
 ---
 
