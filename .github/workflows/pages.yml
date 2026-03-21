@@ -1,0 +1,58 @@
+name: Pages — validate
+
+on:
+  push:
+    branches: [ master, gh-pages ]
+
+jobs:
+  validate:
+    name: Validate HTML + assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate index.html and assets
+        run: |
+          set -euo pipefail
+          echo "Checking repository root for index.html..."
+          if [ ! -f index.html ]; then
+            echo "ERROR: index.html not found"
+            exit 1
+          fi
+
+          echo "Checking HTML structure (html/body open+close tags)..."
+          if ! grep -qi '<html' index.html; then
+            echo "ERROR: <html> tag not found in index.html"
+            exit 1
+          fi
+          if ! grep -qi '</html>' index.html; then
+            echo "ERROR: </html> tag not found in index.html"
+            exit 1
+          fi
+          if ! grep -qi '<body' index.html; then
+            echo "ERROR: <body> tag not found in index.html"
+            exit 1
+          fi
+          if ! grep -qi '</body>' index.html; then
+            echo "ERROR: </body> tag not found in index.html"
+            exit 1
+          fi
+
+          echo "Checking required assets..."
+          MISSING=0
+          for f in me.jpg me-400.jpg me-800.jpg data/content.json; do
+            if [ ! -f "$f" ]; then
+              echo "WARN: asset missing: $f"
+              MISSING=1
+            else
+              echo "OK: $f"
+            fi
+          done
+
+          if [ "$MISSING" -ne 0 ]; then
+            echo "ERROR: one or more required assets are missing"
+            exit 1
+          fi
+
+          echo "All checks passed."
