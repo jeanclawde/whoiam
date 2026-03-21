@@ -5,6 +5,7 @@
 - Steps: add script, add a simple cursor CSS, test mobile wrap
 - Acceptance: Works on mobile & desktop, no overflow
 - Est: 2h
+- Status: completed, Issue #1
 - Issue: https://github.com/jeanclawde/whoiam/issues/1
 
 2) Consolidate color variables
@@ -27,6 +28,7 @@
 - Acceptance: No CLS, smaller payload on mobile
 - Est: 1h
 - Issue: https://github.com/jeanclawde/whoiam/issues/4 
+- Status: completed (commit 9eaf260)
 
 5) Accessibility & keyboard behavior
 - Description: Ensure keyboard copy shortcut only triggers when no selection, add aria-labels to buttons
