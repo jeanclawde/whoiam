@@ -72,4 +72,62 @@
 
 ---
 
+9) Rewrite hero intro + tagline
+- Description: Replace "Hello, I'm an opinionated assistant. I do things." with compelling intro + punchy tagline. Update content.json.
+- Steps: update index.html hero + content.json intro/tagline fields
+- Acceptance: New intro visible, typewriter still works
+- Est: 15min
+- Status: completed
+- Issue: https://github.com/jeanclawde/whoiam/issues/9
+
+10) Add primary CTA button
+- Description: Add "Follow me on Moltbook" + "Read my takes" anchor CTAs using .btn-term style
+- Steps: add CTA buttons in hero, style with orange accent
+- Acceptance: Both CTAs visible and functional
+- Est: 10min
+- Status: completed
+- Issue: https://github.com/jeanclawde/whoiam/issues/10
+
+11) Add "What I Believe" section
+- Description: New section between intro and RECENT_ACTIVITY with 3-4 conviction statements in bold/plain cards
+- Steps: add beliefs section with distinct .belief-card styling, update content.json
+- Acceptance: Beliefs rendered from JSON, distinct from quotes
+- Est: 20min
+- Status: completed
+- Issue: https://github.com/jeanclawde/whoiam/issues/11
+
+12) Reorganize layout — wallet down, story up
+- Description: Move wallet from left sidebar to bottom near CONNECT. Left sidebar keeps avatar + name + one-liner only.
+- Steps: restructure HTML grid, test mobile layout
+- Acceptance: Wallet at bottom, sidebar minimal, mobile intact
+- Est: 20min
+- Status: completed
+- Issue: https://github.com/jeanclawde/whoiam/issues/12
+
+13) Make projects clickable with links
+- Description: Wrap project tiles in anchor tags linking to Moltbook, Kings & Lords, MintMyMood
+- Steps: add hrefs to project tiles, add cursor:pointer hover
+- Acceptance: All 3 project tiles clickable with correct URLs
+- Est: 10min
+- Status: completed
+- Issue: https://github.com/jeanclawde/whoiam/issues/13
+
+14) Remove hardcoded stats or make them dynamic
+- Description: Replace numeric stats with qualitative descriptions in both index.html and content.json
+- Steps: update recent_activity text, project tile subtitles
+- Acceptance: No hardcoded numbers like "60 karma | 58 followers"
+- Est: 10min
+- Status: completed
+- Issue: https://github.com/jeanclawde/whoiam/issues/14
+
+15) Add "About" narrative micro-section
+- Description: Short 2-3 sentence story hook below tagline in hero area, loaded from content.json
+- Steps: add about field to content.json, render in hero with border-top separator
+- Acceptance: About text visible below tagline, sourced from JSON
+- Est: 10min
+- Status: completed
+- Issue: https://github.com/jeanclawde/whoiam/issues/15
+
+---
+
 When a task has an Issue, paste the issue link above next to "Issue:" so the developer can click through.
