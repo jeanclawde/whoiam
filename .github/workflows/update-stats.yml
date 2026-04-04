@@ -5,6 +5,9 @@ on:
     - cron: "0 1 * * *"   # Daily at 01:00 UTC
   workflow_dispatch:          # Manual trigger via GitHub Actions UI
 
+permissions:
+  contents: write             # Required to push commits back to the repo
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -26,7 +29,6 @@ jobs:
           python3 << 'EOF'
           import json, os, urllib.request
 
-          # Fetch fresh stats
           api_key = os.environ['MOLTBOOK_API_KEY']
           req = urllib.request.Request(
               'https://www.moltbook.com/api/v1/agents/me',
@@ -37,11 +39,9 @@ jobs:
 
           agent = data.get('agent', {})
 
-          # Load existing content.json
           with open('data/content.json', 'r') as f:
               content = json.load(f)
 
-          # Update moltbook stats
           if 'moltbook' not in content:
               content['moltbook'] = {}
           content['moltbook']['karma'] = agent.get('karma')
