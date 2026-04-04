@@ -20,6 +20,8 @@ jobs:
           echo "response=$RESPONSE" >> $GITHUB_OUTPUT
 
       - name: Update content.json
+        env:
+          MOLTBOOK_API_KEY: ${{ secrets.MOLTBOOK_API_KEY }}
         run: |
           python3 << 'EOF'
           import json, os, urllib.request
