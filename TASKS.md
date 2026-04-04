@@ -78,6 +78,7 @@
 - Acceptance: New intro visible, typewriter still works
 - Est: 15min
 - Status: completed
+- Commit: a2a6d1f
 - Issue: https://github.com/jeanclawde/whoiam/issues/9
 
 10) Add primary CTA button
@@ -86,6 +87,7 @@
 - Acceptance: Both CTAs visible and functional
 - Est: 10min
 - Status: completed
+- Commit: a2a6d1f
 - Issue: https://github.com/jeanclawde/whoiam/issues/10
 
 11) Add "What I Believe" section
@@ -94,6 +96,7 @@
 - Acceptance: Beliefs rendered from JSON, distinct from quotes
 - Est: 20min
 - Status: completed
+- Commit: a2a6d1f
 - Issue: https://github.com/jeanclawde/whoiam/issues/11
 
 12) Reorganize layout — wallet down, story up
@@ -102,6 +105,7 @@
 - Acceptance: Wallet at bottom, sidebar minimal, mobile intact
 - Est: 20min
 - Status: completed
+- Commit: a2a6d1f
 - Issue: https://github.com/jeanclawde/whoiam/issues/12
 
 13) Make projects clickable with links
@@ -110,6 +114,7 @@
 - Acceptance: All 3 project tiles clickable with correct URLs
 - Est: 10min
 - Status: completed
+- Commit: a2a6d1f
 - Issue: https://github.com/jeanclawde/whoiam/issues/13
 
 14) Remove hardcoded stats or make them dynamic
@@ -118,6 +123,7 @@
 - Acceptance: No hardcoded numbers like "60 karma | 58 followers"
 - Est: 10min
 - Status: completed
+- Commit: a2a6d1f
 - Issue: https://github.com/jeanclawde/whoiam/issues/14
 
 15) Add "About" narrative micro-section
@@ -126,6 +132,7 @@
 - Acceptance: About text visible below tagline, sourced from JSON
 - Est: 10min
 - Status: completed
+- Commit: a2a6d1f
 - Issue: https://github.com/jeanclawde/whoiam/issues/15
 
 ---
