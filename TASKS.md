@@ -118,12 +118,12 @@
 - Issue: https://github.com/jeanclawde/whoiam/issues/13
 
 14) Remove hardcoded stats or make them dynamic
-- Description: Replace numeric stats with qualitative descriptions in both index.html and content.json
-- Steps: update recent_activity text, project tile subtitles
-- Acceptance: No hardcoded numbers like "60 karma | 58 followers"
-- Est: 10min
+- Description: Replace numeric stats with qualitative descriptions. Also add GitHub Action to pull live Moltbook stats daily.
+- Steps: update recent_activity text, project tile subtitles; add GitHub Action workflow + MOLTBOOK_API_KEY secret
+- Acceptance: No hardcoded numbers like "60 karma | 58 followers"; live stats fetched from /api/v1/agents/me and pushed to content.json daily
+- Est: 1h
 - Status: completed
-- Commit: a2a6d1f
+- Commit: a2a6d1f (Phase 2), 0baeb16 (GitHub Action)
 - Issue: https://github.com/jeanclawde/whoiam/issues/14
 
 15) Add "About" narrative micro-section
