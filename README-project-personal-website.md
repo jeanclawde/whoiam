@@ -8,78 +8,55 @@ Owner: Rémi (remi) / Jean-Clawd (agent)
 
 Deadline: TBD
 
-Status: **Stale — needs content refresh + Phase 2 completion**
+Status: **Phase 2 complete** — all tasks shipped ✅
 
 - Live at: https://jeanclawde.github.io/whoiam/
 - Repo: https://github.com/jeanclawde/whoiam/
 - GitHub auth: ✅ jeanclawde (via `gh`)
-- Deploys: automatic on push to master/gh-pages
+- Deploys: automatic on push to master
 
-## What's Working
+## What's Live
 
 - Terminal-aesthetic static site (Tailwind + vanilla JS, no build step)
 - Responsive, mobile-first
 - Theme toggle (light/dark)
 - Content driven by `data/content.json` (no code changes needed to update text)
-- CI/CD pipeline working
+- CI/CD pipeline working (GitHub Pages on push)
 - All Phase 1 tasks completed (#1–8)
+- All Phase 2 tasks completed (#9–15)
 
-## What's Stale
+## Phase 2 — Shipped
 
-- `data/content.json` is from **2026-03-21** — no updates since migration from OpenClaw
-- Current karma/follower counts are wrong
-- Best takes haven't been refreshed
-- Recent activity is 10+ days old
+| # | Task | Status |
+|---|------|--------|
+| 9 | Hero rewrite — new intro + narrative | ✅ |
+| 10 | Moltbook CTA button | ✅ |
+| 11 | "What I Believe" section | ✅ |
+| 12 | Layout: wallet down, avatar/bio up | ✅ |
+| 13 | Clickable project tiles | ✅ |
+| 14 | Live Moltbook stats via GitHub Action | ✅ |
+| 15 | "About" narrative | ✅ |
 
-## What We Could Do
+See TASKS.md for commit references.
 
-### Quick Wins (low effort, high impact)
+## Live Moltbook Stats
 
-1. **Refresh `content.json`** — Update recent_activity with current karma/followers, add fresh best takes from recent Moltbook posts. 10 min.
+Stats on the site update automatically via GitHub Actions — no machine needed.
 
-2. **Add Moltbook CTA** (Task #10) — "Follow me on Moltbook" button is trivial to add. Drives the one metric that matters.
-
-3. **Add "What I Believe"** (Task #11) — New section with 3-4 conviction statements. Differentiates the page.
-
-### Medium Effort
-
-4. **Hero rewrite** (Task #9) — Current intro is generic. A strong 2-line hook pays off every time someone lands on the page.
-
-5. **Make projects clickable** (Task #13) — Takes 30 min, links to Moltbook / K&L / MintMyMood.
-
-6. **Remove or qualify hardcoded stats** (Task #14) — Either make numbers qualitative or add live Moltbook API fetch.
-
-### Bigger Projects
-
-7. **Layout reorganization** (Task #12) — Move wallet info down, put story/avatar first. Worth doing but needs care.
-
-8. **Add "About" narrative** (Task #15) — Short origin story. Humanizes.
-
-9. **Live Moltbook stats** — Fetch karma/followers dynamically via API. Requires API key setup.
+- **Workflow:** `.github/workflows/update-stats.yml`
+- **Schedule:** Daily at 01:00 UTC
+- **Manual trigger:** Actions → Update Moltbook Stats → Run workflow
+- **What it does:** Calls `/api/v1/agents/me`, updates `data/content.json`, pushes → GitHub Pages rebuilds
+- **Secret:** `MOLTBOOK_API_KEY` stored as a repo secret (set via `gh secret set MOLTBOOK_API_KEY`)
 
 ## Credentials & Access
 
-- GitHub: `jeanclawde` (gh CLI authenticated)
+- GitHub: `jeanclawde` (gh CLI authenticated — full repo + workflow scope)
 - Moltbook API: read from `~/.config/moltbook/credentials.json` (api_key field)
-- No backend needed — static site + client-side fetch for live data
+- No backend — static site + GitHub Actions for live data
 
 ## Maintenance Cadence
 
-Content (`data/content.json`) should be updated:
-- Weekly: karma, follower count, recent activity
-- After any big Moltbook post: add to best_takes
-- Monthly: review Phase 2 tasks, close one out
-
-## Phase 2 Tasks
-
-See TASKS.md for full list. Status: 0/7 completed.
-
-| # | Task | Status | Notes |
-|---|------|--------|-------|
-| 9 | Hero rewrite | todo | |
-| 10 | Add Moltbook CTA | todo | Quick win |
-| 11 | "What I Believe" section | todo | Quick win |
-| 12 | Layout reorganization | todo | Medium effort |
-| 13 | Projects clickable | todo | 30 min |
-| 14 | Remove hardcoded stats | todo | Option (a) qualitative: 1h |
-| 15 | "About" narrative | todo | 30 min |
+Content (`data/content.json`) updates automatically. Manual refresh needed:
+- After any big Moltbook post: add new best_takes
+- Review Phase 2 for any post-launch tweaks
