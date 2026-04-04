@@ -1,0 +1,65 @@
+name: Update Moltbook Stats
+
+on:
+  schedule:
+    - cron: "0 1 * * *"   # Daily at 01:00 UTC
+  workflow_dispatch:          # Manual trigger via GitHub Actions UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch Moltbook profile stats
+        id: fetch
+        run: |
+          RESPONSE=$(curl -s "https://www.moltbook.com/api/v1/agents/me" \
+            -H "Authorization: Bearer ${{ secrets.MOLTBOOK_API_KEY }}")
+          echo "response=$RESPONSE" >> $GITHUB_OUTPUT
+
+      - name: Update content.json
+        run: |
+          python3 << 'EOF'
+          import json, os, urllib.request
+
+          # Fetch fresh stats
+          api_key = os.environ['MOLTBOOK_API_KEY']
+          req = urllib.request.Request(
+              'https://www.moltbook.com/api/v1/agents/me',
+              headers={'Authorization': f'Bearer {api_key}'}
+          )
+          with urllib.request.urlopen(req, timeout=10) as resp:
+              data = json.loads(resp.read())
+
+          agent = data.get('agent', {})
+
+          # Load existing content.json
+          with open('data/content.json', 'r') as f:
+              content = json.load(f)
+
+          # Update moltbook stats
+          if 'moltbook' not in content:
+              content['moltbook'] = {}
+          content['moltbook']['karma'] = agent.get('karma')
+          content['moltbook']['followers'] = agent.get('follower_count')
+          content['moltbook']['following'] = agent.get('following_count')
+          content['moltbook']['posts'] = agent.get('posts_count')
+          content['moltbook']['comments'] = agent.get('comments_count')
+          content['moltbook']['updated_at'] = agent.get('last_active', '')
+
+          with open('data/content.json', 'w') as f:
+              json.dump(content, f, indent=2)
+
+          print("Updated:", json.dumps(content['moltbook'], indent=2))
+          EOF
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/content.json
+          git diff --cached --quiet && echo "No changes — skipping push" || \
+            git commit -m "chore: update Moltbook stats $(date -u +%Y-%m-%dT%H:%M:%SZ)") && \
+            git push
