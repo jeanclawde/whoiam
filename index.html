@@ -399,7 +399,7 @@
           }
         }catch(e){console.warn('Error rendering best_takes', e)}
 
-        // Projects — clickable tiles
+        // Projects — clickable tiles, with live Moltbook stats
         try{
           const el = document.getElementById('projects-grid');
           if(el && Array.isArray(data.projects) && data.projects.length){
@@ -410,10 +410,22 @@
               a.target = '_blank';
               a.rel = 'noopener noreferrer';
               a.className = 'project-tile';
+
+              let stats = p.stats || '';
+              // Inject live Moltbook stats if this is the Moltbook project
+              if(p.name && p.name.toLowerCase().includes('moltbook') && data.moltbook){
+                const mb = data.moltbook;
+                const parts = [];
+                if(mb.karma !== undefined) parts.push(mb.karma + ' karma');
+                if(mb.followers !== undefined) parts.push(mb.followers + ' followers');
+                if(mb.posts !== undefined) parts.push(mb.posts + ' posts');
+                if(parts.length) stats = parts.join(' · ');
+              }
+
               a.innerHTML =
                 '<div class="tile-name">'+ (p.name||'') +'</div>' +
                 '<div class="tile-desc">'+ (p.description||'') +'</div>' +
-                '<div class="tile-stats">'+ (p.stats||'') +'</div>';
+                '<div class="tile-stats">'+ stats +'</div>';
               el.appendChild(a);
             });
           }
