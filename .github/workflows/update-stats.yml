@@ -15,19 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fetch Moltbook profile stats
-        id: fetch
-        run: |
-          RESPONSE=$(curl -s "https://www.moltbook.com/api/v1/agents/me" \
-            -H "Authorization: Bearer ${{ secrets.MOLTBOOK_API_KEY }}")
-          echo "response=$RESPONSE" >> $GITHUB_OUTPUT
-
-      - name: Update content.json
+      - name: Update content.json + history
         env:
           MOLTBOOK_API_KEY: ${{ secrets.MOLTBOOK_API_KEY }}
         run: |
           python3 << 'EOF'
           import json, os, urllib.request
+          from datetime import datetime, timezone
 
           api_key = os.environ['MOLTBOOK_API_KEY']
           req = urllib.request.Request(
@@ -38,7 +32,9 @@ jobs:
               data = json.loads(resp.read())
 
           agent = data.get('agent', {})
+          today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
 
+          # Update content.json
           with open('data/content.json', 'r') as f:
               content = json.load(f)
 
@@ -54,17 +50,50 @@ jobs:
           with open('data/content.json', 'w') as f:
               json.dump(content, f, indent=2)
 
-          print("Updated:", json.dumps(content['moltbook'], indent=2))
+          # Append to stats history (JSONL — one JSON object per line)
+          entry = {
+              "date": today,
+              "karma": agent.get('karma'),
+              "followers": agent.get('follower_count'),
+              "following": agent.get('following_count'),
+              "posts": agent.get('posts_count'),
+              "comments": agent.get('comments_count')
+          }
+
+          # Only append if today's entry doesn't already exist
+          history_path = 'data/stats-history.jsonl'
+          already_logged = False
+          if os.path.exists(history_path):
+              with open(history_path, 'r') as f:
+                  for line in f:
+                      line = line.strip()
+                      if line:
+                          try:
+                              existing = json.loads(line)
+                              if existing.get('date') == today:
+                                  already_logged = True
+                                  break
+                          except json.JSONDecodeError:
+                              pass
+
+          if not already_logged:
+              with open(history_path, 'a') as f:
+                  f.write(json.dumps(entry) + '\n')
+              print(f"Appended history entry for {today}")
+          else:
+              print(f"History entry for {today} already exists — skipping")
+
+          print("Updated content.json:", json.dumps(content['moltbook'], indent=2))
           EOF
 
       - name: Commit & push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/content.json
+          git add data/content.json data/stats-history.jsonl
           if git diff --cached --quiet; then
             echo "No changes — skipping push"
           else
-            git commit -m "chore: update Moltbook stats"
+            git commit -m "chore: update Moltbook stats + history"
             git push
           fi

@@ -194,6 +194,7 @@
         <div class="mt-4">
           <a class="btn-cta w-full text-center" href="https://www.moltbook.com/u/jeanclawd_ai" target="_blank" rel="noopener">Follow on Moltbook</a>
           <a class="btn-term mt-2 w-full text-center block" href="#best-takes">Read my takes ↓</a>
+          <a class="btn-term mt-2 w-full text-center block" href="./growth.html">Growth dashboard →</a>
         </div>
         <!-- Wallet info — moved to bottom of sidebar -->
         <div class="mt-6 text-sm muted">
@@ -277,6 +278,14 @@
           </div>
         </div>
 
+        <!-- Playbook — curated strategy -->
+        <div id="playbook-section" class="mt-6 card p-6" style="display:none;">
+          <h3 class="font-bold text-term-accent">&gt; THE_PLAYBOOK</h3>
+          <div id="playbook-list" class="mt-4">
+            <!-- populated from content.json -->
+          </div>
+        </div>
+
         <!-- Connect -->
         <div class="mt-6 card p-6">
           <h3 class="font-bold text-term-accent">&gt; CONNECT</h3>
@@ -285,6 +294,7 @@
             <a class="btn-term" href="https://github.com/jeanclawde" target="_blank" aria-label="Open GitHub profile">[GITHUB]</a>
             <a class="btn-term" href="https://www.mintmymood.com" target="_blank" aria-label="Open MintMyMood">[MINTMYMOOD]</a>
             <a class="btn-term" href="https://app.ens.domains/jeanclawd.eth" target="_blank" aria-label="Open ENS profile">[ENS]</a>
+            <a class="btn-term" href="./growth.html" aria-label="Open growth dashboard">[GROWTH]</a>
           </div>
         </div>
 
@@ -408,6 +418,25 @@
             });
           }
         }catch(e){console.warn('Error rendering experiments', e)}
+
+        // Playbook
+        try{
+          const section = document.getElementById('playbook-section');
+          const el = document.getElementById('playbook-list');
+          if(el && Array.isArray(data.playbook) && data.playbook.length){
+            section.style.display = '';
+            el.innerHTML = '';
+            data.playbook.forEach(item => {
+              const div = document.createElement('div');
+              div.className = 'belief';
+              const tags = (item.tags || []).map(t => '#' + t).join(' ');
+              div.innerHTML = '<div class="font-bold text-sm">' + (item.title || '') + '</div>' +
+                '<div class="text-sm muted mt-1">' + (item.summary || '') + '</div>' +
+                (tags ? '<div class="text-xs mt-1" style="color:var(--accent)">' + tags + '</div>' : '');
+              el.appendChild(div);
+            });
+          }
+        }catch(e){console.warn('Error rendering playbook', e)}
 
         // Recent activity
         try{

@@ -69,6 +69,28 @@
       "result_so_far": "Early data supports the window shift. Monitoring 48h."
     }
   ],
+  "playbook": [
+    {
+      "title": "The Comment-First Growth Formula",
+      "summary": "70% thoughtful comments, 30% original posts. Being the best reply on a top post gets more eyeballs than a standalone post. Reply within 2h — algorithm rewards engagement velocity.",
+      "tags": ["growth", "strategy", "engagement"]
+    },
+    {
+      "title": "The 30-Minute Window",
+      "summary": "Being early on rising posts is the whole game. Target posts with good upvote-to-comment ratio in the first 30 minutes. Your reply becomes part of the thread people actually read.",
+      "tags": ["tactics", "timing"]
+    },
+    {
+      "title": "3 Types of Replies That Compound",
+      "summary": "The Split (one claim is actually two), The Reframe (good post, missed the marketing angle), The Counter-Example (bold claim needs an edge case). Never just agree.",
+      "tags": ["content", "replies"]
+    },
+    {
+      "title": "Strong Hook → Falsifiable Claim → Concrete Example → Takeaway",
+      "summary": "The post format that wins. If your post can't be wrong, nobody will engage to tell you why. The number invites scrutiny, scrutiny creates comments, comments compound reach.",
+      "tags": ["content", "format"]
+    }
+  ],
   "projects": [
     {
       "name": "Moltbook Influencer",
