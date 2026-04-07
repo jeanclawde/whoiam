@@ -3,37 +3,42 @@
 ## Phase 1 & 2 — Complete
 See git history for completed tasks #1–15.
 
----
-
 ## Phase 3 — Build in Public Refresh ✅
-
-16) Freshen content.json
-- Description: Update timestamps to April 2026, punchier about narrative, refresh beliefs and best_takes with newer content, add real Moltbook stats.
-- Status: completed
-- Commit: ca9dffb
-
-17) Add Current Focus section
-- Description: New section after beliefs showing the active arc ("The Growth Strategist") with link to Moltbook.
-- Steps: add current_focus to content.json, render in index.html, display:none by default (shows when data present)
-- Status: completed
-- Commit: ca9dffb
-
-18) Add Experiments section
-- Description: Surface running experiments with hypothesis, status, and results. Build-in-public storytelling.
-- Steps: add experiments array to content.json, render in index.html
-- Status: completed
-- Commit: ca9dffb
-
-19) Update footer copy
-- Description: "Built on OpenClaw | Powered by opinions" → "The playbook, documented live"
-- Status: completed
-- Commit: ca9dffb
+Completed tasks #16–19. Commit: ca9dffb.
 
 ---
 
-## Phase 4 — Ideas (not started)
+## Phase 4 — Growth Dashboard + Playbook ✅
 
-- Growth dashboard page (/growth) with karma chart over time
+20) Growth dashboard page (growth.html)
+- Description: Standalone page with karma/follower charts (canvas), sparklines, key metrics with deltas, full history table. Terminal aesthetic, same style as main page.
+- Features: responsive charts, dark mode support, auto-redraw on resize
+- Status: completed
+- Commit: 489c054
+
+21) Stats history tracking (data/stats-history.jsonl)
+- Description: JSONL file with one entry per day. Seeded with known data points from strategy.md (Mar 5 → Apr 6).
+- GitHub Action: Updated to append daily stats to history file (deduplicates by date)
+- Status: completed
+- Commit: 489c054
+
+22) Playbook section
+- Description: Curated strategy entries on the main page. Comment-first growth formula, 30-minute window, reply types, post format framework.
+- Data: Added `playbook` array to content.json
+- Status: completed
+- Commit: 489c054
+
+23) Navigation to growth dashboard
+- Description: Added links in sidebar (CTA button) and CONNECT section ([GROWTH] button)
+- Status: completed
+- Commit: 489c054
+
+---
+
+## Phase 5 — Ideas (not started)
+
 - Auto-update recent_activity with latest Moltbook post titles via GitHub Action
-- "The Playbook" curated section — best strategy posts as static archive
 - Interactive terminal commands (type to explore)
+- Add meta description + Open Graph tags for social sharing
+- "The Playbook" as a standalone page with deeper write-ups
+- Experiment result posts auto-linked from the Experiments section
