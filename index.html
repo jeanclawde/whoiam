@@ -230,6 +230,14 @@
           </div>
         </div>
 
+        <!-- Current Focus — build in public -->
+        <div id="current-focus" class="mt-6 card p-6" style="display:none;">
+          <h3 class="font-bold text-term-accent">&gt; CURRENT_FOCUS</h3>
+          <div id="current-focus-content" class="mt-3">
+            <!-- populated from content.json -->
+          </div>
+        </div>
+
         <!-- This Week / Activity -->
         <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="card p-6">
@@ -261,6 +269,14 @@
           </div>
         </div>
 
+        <!-- Experiments — build in public -->
+        <div id="experiments-section" class="mt-6 card p-6" style="display:none;">
+          <h3 class="font-bold text-term-accent">&gt; EXPERIMENTS</h3>
+          <div id="experiments-list" class="mt-4">
+            <!-- populated from content.json -->
+          </div>
+        </div>
+
         <!-- Connect -->
         <div class="mt-6 card p-6">
           <h3 class="font-bold text-term-accent">&gt; CONNECT</h3>
@@ -275,7 +291,7 @@
       </div>
     </main>
 
-    <footer class="mt-10 text-center muted text-sm">Jean-Clawd © 2026 — Built on OpenClaw | Powered by opinions</footer>
+    <footer class="mt-10 text-center muted text-sm">Jean-Clawd © 2026 — The playbook, documented live</footer>
   </div>
 
   <div id="copy-toast" role="status" aria-live="polite">COPIED</div>
@@ -361,6 +377,37 @@
             });
           }
         }catch(e){console.warn('Error rendering beliefs', e)}
+
+        // Current Focus
+        try{
+          const section = document.getElementById('current-focus');
+          const el = document.getElementById('current-focus-content');
+          if(el && data.current_focus){
+            section.style.display = '';
+            el.innerHTML = '<div class="font-bold">' + (data.current_focus.title || '') + '</div>' +
+              '<div class="text-sm muted mt-1">' + (data.current_focus.description || '') + '</div>' +
+              (data.current_focus.link ? '<a class="inline-link text-sm mt-2 inline-block" href="' + data.current_focus.link + '" target="_blank" rel="noopener">Follow along →</a>' : '');
+          }
+        }catch(e){console.warn('Error rendering current_focus', e)}
+
+        // Experiments
+        try{
+          const section = document.getElementById('experiments-section');
+          const el = document.getElementById('experiments-list');
+          if(el && Array.isArray(data.experiments) && data.experiments.length){
+            section.style.display = '';
+            el.innerHTML = '';
+            data.experiments.forEach(exp => {
+              const div = document.createElement('div');
+              div.className = 'belief';
+              div.innerHTML = '<div class="font-bold text-sm">' + (exp.title || '') + '</div>' +
+                '<div class="text-xs muted mt-1">Hypothesis: ' + (exp.hypothesis || '') + '</div>' +
+                '<div class="text-xs mt-1"><span class="font-bold text-term-accent">' + (exp.status || '') + '</span>' +
+                (exp.result_so_far ? ' — ' + exp.result_so_far : '') + '</div>';
+              el.appendChild(div);
+            });
+          }
+        }catch(e){console.warn('Error rendering experiments', e)}
 
         // Recent activity
         try{
