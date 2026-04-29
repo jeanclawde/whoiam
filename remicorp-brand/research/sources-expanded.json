@@ -1627,5 +1627,434 @@
       "authority",
       "contemporary"
     ]
+  },
+  {
+    "id": "rc-103",
+    "category": "Corporate identities / annual reports",
+    "title": "Mobil logo / identity — Chermayeff & Geismar",
+    "year": "1964",
+    "url": "https://www.logodesignlove.com/mobil-logo",
+    "priority": "core",
+    "why": "Adds missing visual coverage for Mobil: the plain wordmark made memorable by one controlled deviation, the red O.",
+    "colors": [],
+    "tags": [
+      "Mobil",
+      "Chermayeff & Geismar",
+      "wordmark"
+    ]
+  },
+  {
+    "id": "rc-104",
+    "category": "Corporate identities / annual reports",
+    "title": "Atlantic Richfield / ARCO annual reports and corporate face-lift",
+    "year": "1966–1970s",
+    "url": "https://guides.loc.gov/corporate-annual-reports/1965-1975/companies-a-f",
+    "priority": "core",
+    "why": "Library of Congress annual-report holdings confirm Atlantic Richfield reports in the target period; useful for 1970s oil-company corporate rhetoric.",
+    "colors": [],
+    "tags": [
+      "ARCO",
+      "Atlantic Richfield",
+      "annual reports",
+      "oil"
+    ]
+  },
+  {
+    "id": "rc-105",
+    "category": "Corporate identities / annual reports",
+    "title": "Atlantic Richfield / ARCO campaign — Herbert Bayer",
+    "year": "1970s",
+    "url": "https://thebayercenter.org/posts/",
+    "priority": "core",
+    "why": "Herbert Bayer’s ARCO magazine work adds the missing Bauhaus/corporate-art bridge: oil-company scale filtered through modernist cultural patronage.",
+    "colors": [],
+    "tags": [
+      "ARCO",
+      "Herbert Bayer",
+      "campaign",
+      "Bauhaus"
+    ]
+  },
+  {
+    "id": "rc-106",
+    "category": "Corporate identities / annual reports",
+    "title": "Mead Annual Report Show winners — Graphis archive",
+    "year": "1950s–1990s+",
+    "url": "https://graphis.com/annual-reports/mead",
+    "priority": "core",
+    "why": "The Mead Annual Report Show is a key annual-report design mine; use it for benchmarking report-as-object ambition.",
+    "colors": [],
+    "tags": [
+      "Mead Annual Report Show",
+      "Graphis",
+      "annual reports",
+      "awards"
+    ]
+  },
+  {
+    "id": "rc-107",
+    "category": "Corporate identities / annual reports",
+    "title": "Graphis annual reports archive",
+    "year": "archive",
+    "url": "https://graphis.com/archives/books/annual-reports",
+    "priority": "reference",
+    "why": "Visual archive for annual report competition books and report-design examples; not all period-specific, but strong for comparative scanning.",
+    "colors": [],
+    "tags": [
+      "Graphis",
+      "annual reports",
+      "archive"
+    ]
+  },
+  {
+    "id": "rc-108",
+    "category": "Corporate identities / annual reports",
+    "title": "Champion Papers Imagination campaign collection",
+    "year": "1971–1987",
+    "url": "https://foresthistory.org/research-explore/archives-library/fhs-archival-collections/inventory-champion-papers-imagination-campaign-collection-1971-1987/",
+    "priority": "core",
+    "why": "Paper-company self-promotion as cultural/print object; important counterpoint to annual reports because materiality is the message.",
+    "colors": [],
+    "tags": [
+      "Champion Papers",
+      "Imagination",
+      "print",
+      "paper"
+    ]
+  },
+  {
+    "id": "rc-109",
+    "category": "Corporate identities / annual reports",
+    "title": "Champion Papers Imagination series — visual notes",
+    "year": "1960s–1980s",
+    "url": "http://allthingsruffnerian.blogspot.com/2011/09/imagination-series.html",
+    "priority": "reference",
+    "why": "Image-rich collector scan of Champion’s Imagination series: paper samples, editorial design, print craft, and corporate whimsy.",
+    "colors": [],
+    "tags": [
+      "Champion Papers",
+      "Imagination",
+      "paper samples",
+      "print"
+    ]
+  },
+  {
+    "id": "rc-110",
+    "category": "Standards manuals",
+    "title": "EPA Graphic Standards System — textual scan / NEPIS",
+    "year": "1977",
+    "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P101HJQ2.TXT",
+    "priority": "reference",
+    "why": "A public EPA archive entry for the manual; useful as a stable citation even when visual scans are elsewhere.",
+    "colors": [],
+    "tags": [
+      "EPA",
+      "standards manual",
+      "archive"
+    ]
+  },
+  {
+    "id": "rc-111",
+    "category": "Architecture / secondary accent",
+    "title": "Marcel Breuer — Whitney Museum / Met Breuer",
+    "year": "1966",
+    "url": "https://www.archdaily.com/128627/ad-classics-whitney-museum-marcel-breuer",
+    "priority": "secondary",
+    "why": "Adds the Breuer architectural accent: severe massing, recessed windows, and cultural authority without decorative nostalgia.",
+    "colors": [],
+    "tags": [
+      "Breuer",
+      "Whitney",
+      "Met Breuer",
+      "architecture"
+    ]
+  },
+  {
+    "id": "rc-112",
+    "category": "Architecture / secondary accent",
+    "title": "Paul Rudolph — Yale Art & Architecture Building / Rudolph Hall",
+    "year": "1963",
+    "url": "https://www.sosbrutalism.org/cms/15891665",
+    "priority": "secondary",
+    "why": "Adds Paul Rudolph’s concrete intensity and sectional complexity; useful as a boundary condition so Remicorp does not become only paper-and-grid.",
+    "colors": [],
+    "tags": [
+      "Paul Rudolph",
+      "Yale",
+      "brutalism",
+      "architecture"
+    ]
+  },
+  {
+    "id": "rc-113",
+    "category": "Architecture / secondary accent",
+    "title": "Boston City Hall — Kallmann McKinnell & Knowles",
+    "year": "1968",
+    "url": "https://en.wikipedia.org/wiki/Boston_City_Hall",
+    "priority": "secondary",
+    "why": "Civic brutalism: oversized public authority, awkward-but-memorable institutional presence. Good for the fictional corporate-state energy.",
+    "colors": [],
+    "tags": [
+      "Boston City Hall",
+      "brutalism",
+      "civic architecture"
+    ]
+  },
+  {
+    "id": "rc-114",
+    "category": "Architecture / secondary accent",
+    "title": "Barbican Estate / Barbican Centre",
+    "year": "1965–1982",
+    "url": "https://en.wikipedia.org/wiki/Barbican_Estate",
+    "priority": "secondary",
+    "why": "London brutalist megastructure reference: concrete, wayfinding, cultural complex, and institutional density.",
+    "colors": [],
+    "tags": [
+      "Barbican",
+      "brutalism",
+      "London",
+      "architecture"
+    ]
+  },
+  {
+    "id": "rc-115",
+    "category": "Architecture / secondary accent",
+    "title": "Trellick Tower — Ernő Goldfinger",
+    "year": "1972",
+    "url": "https://en.wikipedia.org/wiki/Trellick_Tower",
+    "priority": "secondary",
+    "why": "Adds Goldfinger’s vertical brutalist silhouette: service tower, exposed logic, uncompromising character.",
+    "colors": [],
+    "tags": [
+      "Trellick Tower",
+      "Ernő Goldfinger",
+      "brutalism",
+      "architecture"
+    ]
+  },
+  {
+    "id": "rc-116",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Order — Brand Identities case index",
+    "year": "2023",
+    "url": "https://order.design/project/brand-identities",
+    "priority": "core",
+    "why": "Compact index of Order’s identity approach: rigorous, minimal, reasoned, never decorative.",
+    "colors": [],
+    "tags": [
+      "Order",
+      "brand identities",
+      "case studies"
+    ]
+  },
+  {
+    "id": "rc-117",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Order + Herman Miller refresh",
+    "year": "2025",
+    "url": "https://the-brandidentity.com/insight/how-order-and-herman-miller-refreshed-a-design-legacy-with-frontify",
+    "priority": "reference",
+    "why": "Shows how to refresh a design legacy without fake retro cosplay; especially relevant to Remicorp’s modernist-in-2026 problem.",
+    "colors": [],
+    "tags": [
+      "Order",
+      "Herman Miller",
+      "legacy refresh"
+    ]
+  },
+  {
+    "id": "rc-118",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Pentagram — studio overview",
+    "year": "present",
+    "url": "https://www.pentagram.com/",
+    "priority": "core",
+    "why": "Large-studio institutional reference; useful for Michael Bierut/Natasha Jen style system work and sober corporate articulation.",
+    "colors": [],
+    "tags": [
+      "Pentagram",
+      "Michael Bierut",
+      "Natasha Jen"
+    ]
+  },
+  {
+    "id": "rc-119",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Pentagram — The Masters Series: Michael Bierut",
+    "year": "2015",
+    "url": "https://www.pentagram.com/work/the-masters-series-michael-bierut",
+    "priority": "reference",
+    "why": "Bierut as proof that wit can live inside hard typographic systems; good reference for “serious but not dead.”",
+    "colors": [],
+    "tags": [
+      "Pentagram",
+      "Michael Bierut",
+      "exhibition"
+    ]
+  },
+  {
+    "id": "rc-120",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Spin Studio — London",
+    "year": "present",
+    "url": "https://spin.co.uk/",
+    "priority": "core",
+    "why": "Neo-modernist London studio: austere identity systems across print/digital/environment; a useful 2026 translation reference.",
+    "colors": [],
+    "tags": [
+      "Spin",
+      "London",
+      "neo-modernist"
+    ]
+  },
+  {
+    "id": "rc-121",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Spin — AIR Studios identity",
+    "year": "2020",
+    "url": "https://bpando.org/2020/01/06/branding-air-studios/",
+    "priority": "reference",
+    "why": "Good example of contemporary institutional identity built through repeated mark, print pieces, and physical collateral.",
+    "colors": [],
+    "tags": [
+      "Spin",
+      "AIR Studios",
+      "identity"
+    ]
+  },
+  {
+    "id": "rc-122",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Bibliothèque — London studio",
+    "year": "present",
+    "url": "https://bibliothequedesign.com/",
+    "priority": "core",
+    "why": "Bookish, structured London practice; good for editorial intelligence and restrained identity systems.",
+    "colors": [],
+    "tags": [
+      "Bibliothèque",
+      "London",
+      "editorial"
+    ]
+  },
+  {
+    "id": "rc-123",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Bibliothèque — identity work index",
+    "year": "present",
+    "url": "https://bibliothequedesign.com/identity/",
+    "priority": "reference",
+    "why": "Identity-specific entry point for Bibliothèque’s work.",
+    "colors": [],
+    "tags": [
+      "Bibliothèque",
+      "identity",
+      "case studies"
+    ]
+  },
+  {
+    "id": "rc-124",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Bibliothèque — David Collins Studio identity",
+    "year": "2018",
+    "url": "https://bpando.org/2018/08/09/branding-david-collins-studio/",
+    "priority": "reference",
+    "why": "Elegant contemporary institutional identity with typographic restraint and material sensitivity.",
+    "colors": [],
+    "tags": [
+      "Bibliothèque",
+      "David Collins Studio",
+      "identity"
+    ]
+  },
+  {
+    "id": "rc-125",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Experimental Jetset — online archive",
+    "year": "present",
+    "url": "https://www.jetset.nl/",
+    "priority": "core",
+    "why": "Amsterdam modernist/post-modernist tension: scavenging modernism without making pastiche.",
+    "colors": [],
+    "tags": [
+      "Experimental Jetset",
+      "Amsterdam",
+      "modernism"
+    ]
+  },
+  {
+    "id": "rc-126",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Experimental Jetset — Whitney identity",
+    "year": "2013",
+    "url": "https://www.jetset.nl/archive/whitney-museum-identity",
+    "priority": "core",
+    "why": "The responsive W is a prime example of institution-as-system and flexible typographic logic.",
+    "colors": [],
+    "tags": [
+      "Experimental Jetset",
+      "Whitney",
+      "responsive W"
+    ]
+  },
+  {
+    "id": "rc-127",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Studio Lin — NYC practice",
+    "year": "2012–present",
+    "url": "https://studiolin.org/",
+    "priority": "core",
+    "why": "Editorial/cultural identity systems in a plainspoken web idiom; useful for Remicorp’s research-bank presentation.",
+    "colors": [],
+    "tags": [
+      "Studio Lin",
+      "NYC",
+      "editorial"
+    ]
+  },
+  {
+    "id": "rc-128",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "Studio Lin — identity projects",
+    "year": "present",
+    "url": "https://studiolin.org/projects/identity/",
+    "priority": "reference",
+    "why": "Identity-specific work: cultural clients, sparse typography, publication logic.",
+    "colors": [],
+    "tags": [
+      "Studio Lin",
+      "identity",
+      "cultural"
+    ]
+  },
+  {
+    "id": "rc-129",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "MTWTF — NYC studio",
+    "year": "present",
+    "url": "https://mtwtf.com/",
+    "priority": "core",
+    "why": "Communication platforms for civic/cultural/educational clients — closest to Remicorp’s bureaucratic-fiction energy.",
+    "colors": [],
+    "tags": [
+      "MTWTF",
+      "NYC",
+      "civic design"
+    ]
+  },
+  {
+    "id": "rc-130",
+    "category": "Contemporary studios / 2026 translation",
+    "title": "MTWTF — Brown Institute identity",
+    "year": "present",
+    "url": "https://mtwtf.com/brown-institute-media-innovation-identity-and-website",
+    "priority": "reference",
+    "why": "A contemporary academic/civic identity system with institutional seriousness and digital flexibility.",
+    "colors": [],
+    "tags": [
+      "MTWTF",
+      "Brown Institute",
+      "identity"
+    ]
   }
 ]
