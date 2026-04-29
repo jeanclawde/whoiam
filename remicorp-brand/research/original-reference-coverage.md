@@ -43,3 +43,8 @@ Generated after batch research passes. “✅” means represented in the source
 - ✅ MTWTF
 
 Current totals: 130 sources / 54 moodboard images.
+
+
+## Moodboard image coverage update
+
+All 130 source URLs are now represented in the image moodboard. Total moodboard cards: 145. Generated typographic source cards are used where a source is textual, bibliographic, or not safely image-scrapable.
