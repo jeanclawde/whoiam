@@ -1,0 +1,303 @@
+[
+  {
+    "category": "Corporate identities 1955–1980",
+    "title": "IBM annual reports / identity — Paul Rand",
+    "year": "1956–1970s",
+    "url": "https://www.paulrand.design/work/IBM.html",
+    "priority": "core",
+    "why": "Ultimate reference: systematic corporate voice, abstract cover systems, strict-but-human modernism. Study first.",
+    "colors": [
+      "#1f70c1",
+      "#000000",
+      "#ffffff",
+      "#d83a2e"
+    ],
+    "tags": [
+      "annual reports",
+      "Paul Rand",
+      "IBM",
+      "system"
+    ],
+    "id": "rc-01"
+  },
+  {
+    "category": "Corporate identities 1955–1980",
+    "title": "Westinghouse annual reports — Paul Rand",
+    "year": "1960–1970s",
+    "url": "https://www.paulrand.design/work/Westinghouse.html",
+    "priority": "core",
+    "why": "Industrial confidence, symbol-first logic, covers that turn corporate reporting into graphic memory.",
+    "colors": [
+      "#005aa9",
+      "#111111",
+      "#f4f0e8",
+      "#ff4b2b"
+    ],
+    "tags": [
+      "annual reports",
+      "industrial",
+      "Rand"
+    ],
+    "id": "rc-02"
+  },
+  {
+    "category": "Corporate identities 1955–1980",
+    "title": "Olivetti — Giovanni Pintori / Marcello Nizzoli",
+    "year": "1940s–1960s",
+    "url": "https://designreviewed.com/artefacts/olivetti-advertisement-1960/",
+    "priority": "core",
+    "why": "The warm/intelligent counterweight: playful abstraction, technical metaphors, bright systems.",
+    "colors": [
+      "#da3b26",
+      "#0d6f9f",
+      "#f4c841",
+      "#f6f1df"
+    ],
+    "tags": [
+      "Olivetti",
+      "Pintori",
+      "abstraction"
+    ],
+    "id": "rc-03"
+  },
+  {
+    "category": "Corporate identities 1955–1980",
+    "title": "Container Corporation of America — Great Ideas of Western Man",
+    "year": "1950–1970s",
+    "url": "http://www.codex99.com/design/great-ideas.html",
+    "priority": "core",
+    "why": "Corporate patronage as cultural signal: rigorous layout meets art and ideas.",
+    "colors": [
+      "#efdfbd",
+      "#25231f",
+      "#b73b2d",
+      "#3d6f8e"
+    ],
+    "tags": [
+      "CCA",
+      "Great Ideas",
+      "culture"
+    ],
+    "id": "rc-04"
+  },
+  {
+    "category": "Corporate identities 1955–1980",
+    "title": "Knoll graphic identity — Lella & Massimo Vignelli",
+    "year": "1966+",
+    "url": "https://www.rit.edu/vignellicenter/vignelli-graphic-identity",
+    "priority": "core",
+    "why": "Grid, furniture, typography, discipline. High-end corporate taste without decoration.",
+    "colors": [
+      "#d71920",
+      "#111111",
+      "#ffffff",
+      "#b7b7b7"
+    ],
+    "tags": [
+      "Vignelli",
+      "Knoll",
+      "grid"
+    ],
+    "id": "rc-05"
+  },
+  {
+    "category": "Corporate identities 1955–1980",
+    "title": "Lufthansa — Otl Aicher / HfG Ulm",
+    "year": "1962–1963",
+    "url": "https://page-spread.com/a5-05-lufthansa/",
+    "priority": "core",
+    "why": "Systematic application, aviation precision, blue/yellow authority.",
+    "colors": [
+      "#05164d",
+      "#ffcc00",
+      "#ffffff",
+      "#8a8d91"
+    ],
+    "tags": [
+      "Aicher",
+      "Lufthansa",
+      "Ulm"
+    ],
+    "id": "rc-06"
+  },
+  {
+    "category": "Corporate identities 1955–1980",
+    "title": "Bell System — Saul Bass identity",
+    "year": "1969–1970",
+    "url": "https://www.logodesignlove.com/bell-system-logo-redesign-saul-bass",
+    "priority": "core",
+    "why": "Massive re-identification: symbol reduction, repeatability, operational confidence.",
+    "colors": [
+      "#0072bc",
+      "#ffffff",
+      "#111111",
+      "#f1f1ef"
+    ],
+    "tags": [
+      "Saul Bass",
+      "Bell",
+      "rollout"
+    ],
+    "id": "rc-07"
+  },
+  {
+    "category": "Corporate identities 1955–1980",
+    "title": "Mobil — Chermayeff & Geismar",
+    "year": "1964",
+    "url": "https://cghnyc.com/work/project/mobil",
+    "priority": "core",
+    "why": "Plain wordmark made memorable through one controlled deviation: the red O.",
+    "colors": [
+      "#0057a8",
+      "#e31b23",
+      "#ffffff",
+      "#1a1a1a"
+    ],
+    "tags": [
+      "Mobil",
+      "CGH",
+      "wordmark"
+    ],
+    "id": "rc-08"
+  },
+  {
+    "category": "Standards manuals",
+    "title": "NYCTA Graphics Standards Manual — Vignelli / Unimark",
+    "year": "1970",
+    "url": "https://archive.org/details/nycta-gs-manual",
+    "priority": "manual",
+    "why": "The grammar: grid, arrows, naming, wayfinding, disciplined pages.",
+    "colors": [
+      "#f05a28",
+      "#111111",
+      "#ffffff",
+      "#005cb9"
+    ],
+    "tags": [
+      "NYCTA",
+      "manual",
+      "wayfinding"
+    ],
+    "id": "rc-09"
+  },
+  {
+    "category": "Standards manuals",
+    "title": "NASA Graphics Standards Manual",
+    "year": "1976",
+    "url": "https://www.nasa.gov/wp-content/uploads/2015/01/nasa_graphics_manual_nhb_1430-2_jan_1976.pdf",
+    "priority": "manual",
+    "why": "Institutional futurism; great for specs, page labeling, hierarchy and color discipline.",
+    "colors": [
+      "#f0323c",
+      "#005baa",
+      "#111111",
+      "#ffffff"
+    ],
+    "tags": [
+      "NASA",
+      "worm",
+      "manual"
+    ],
+    "id": "rc-10"
+  },
+  {
+    "category": "Standards manuals",
+    "title": "EPA Graphic Standards System — Chermayeff & Geismar",
+    "year": "1977",
+    "url": "https://standardsmanual.com/products/epa",
+    "priority": "manual",
+    "why": "Flexible modular identity; excellent for symbol systems and palettes.",
+    "colors": [
+      "#2f7d32",
+      "#00a3e0",
+      "#111111",
+      "#f3efe0"
+    ],
+    "tags": [
+      "EPA",
+      "CGH",
+      "manual"
+    ],
+    "id": "rc-11"
+  },
+  {
+    "category": "Contemporary studios",
+    "title": "Order — Jesse Reed & Hamish Smyth",
+    "year": "2020s",
+    "url": "https://order.design/",
+    "priority": "contemporary",
+    "why": "The 2026 translation: clean, reasoned, standards-led identity without nostalgic cosplay.",
+    "colors": [
+      "#111111",
+      "#ffffff",
+      "#dedbd2",
+      "#c7352f"
+    ],
+    "tags": [
+      "Order",
+      "contemporary",
+      "standards"
+    ],
+    "id": "rc-12"
+  },
+  {
+    "category": "Contemporary studios",
+    "title": "Standards Manual reissues",
+    "year": "2014–2026",
+    "url": "https://standardsmanual.com/",
+    "priority": "contemporary",
+    "why": "Best current entry point into manuals as desirable objects: scans, pacing, captions, archival aura.",
+    "colors": [
+      "#111111",
+      "#f5f1e8",
+      "#e14b31",
+      "#888888"
+    ],
+    "tags": [
+      "Standards Manual",
+      "archives",
+      "books"
+    ],
+    "id": "rc-13"
+  },
+  {
+    "category": "Contemporary studios",
+    "title": "Experimental Jetset",
+    "year": "2020s",
+    "url": "https://experimentaljetset.nl/",
+    "priority": "contemporary",
+    "why": "Language-forward modernism; useful if remicorp leans textual, conceptual, slightly weird.",
+    "colors": [
+      "#111111",
+      "#ffffff",
+      "#ff3b30",
+      "#e6e6e6"
+    ],
+    "tags": [
+      "Amsterdam",
+      "language",
+      "modernism"
+    ],
+    "id": "rc-14"
+  },
+  {
+    "category": "Architecture / secondary accent",
+    "title": "Brutalist / institutional architecture: Breuer, Rudolph, Boston City Hall, Barbican",
+    "year": "1950s–1970s",
+    "url": "https://www.archdaily.com/search/all?q=brutalist%20architecture%20boston%20city%20hall%20barbican%20breuer",
+    "priority": "secondary",
+    "why": "Secondary accent only: mass, concrete, modularity, civic seriousness. Do not let it overpower the graphic identity.",
+    "colors": [
+      "#6d6a62",
+      "#d6d0c4",
+      "#1b1b1b",
+      "#a24d36"
+    ],
+    "tags": [
+      "brutalism",
+      "architecture",
+      "secondary"
+    ],
+    "id": "rc-15"
+  }
+]
